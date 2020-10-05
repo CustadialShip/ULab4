@@ -1,0 +1,2 @@
+dev.by; dev; 10.12.2001; minsk; 01.11.1995; 103; ; 1234566; debv@gmail.com; dev; smt; dev.by;
+tut.by; tut; 4.4.1965; gomel; 3.6.1454; 304; ; 4321342; tutby@tut.by; tut; smt; tut.by;
