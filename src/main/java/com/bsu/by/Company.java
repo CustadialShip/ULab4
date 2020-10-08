@@ -1,26 +1,24 @@
 package com.bsu.by;
 
-import java.io.IOException;
-import java.util.Date;
-
 public class Company {
-    private String name;
-    private String shortTitle;
-    private String dateUpdate; // ?
-    private String address;
-    private String dateFoundation;  // ?
-    private String countEmployees;
-    private String auditor;
-    private String phone;
-    private String email;
-    private String branch;
-    private String activity;
-    private String link;
-    private String[] info;
+    private final String name;
+    private final String shortTitle;
+    private final String dateUpdate; // ?
+    private final String address;
+    private final String dateFoundation;  // ?
+    private final String countEmployees;
+    private final String auditor;
+    private final String phone;
+    private final String email;
+    private final String branch;
+    private final String activity;
+    private final String link;
+    private final String[] info;
 
-    Company(String[] info) throws IOException{
+
+    Company(String[] info) throws IllegalArgumentException{
         if (info.length != 12) {
-            throw new IOException("Error: wrong data");
+            throw new IllegalArgumentException("Error: wrong data");
         }
         this.info = info;
         this.name = info[0];
@@ -41,13 +39,57 @@ public class Company {
         return info;
     }
 
-    String getShortTitle(){
-        return shortTitle;
-    }
-
     void printCompany() {
         for (String i : info) {
             System.out.println(i);
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDateUpdate() {
+        return dateUpdate;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getDateFoundation() {
+        return dateFoundation;
+    }
+
+    public String getCountEmployees() {
+        return countEmployees;
+    }
+
+    public String getAuditor() {
+        return auditor;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public String getActivity() {
+        return activity;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public String getShortTitle() {
+        return shortTitle;
     }
 }
