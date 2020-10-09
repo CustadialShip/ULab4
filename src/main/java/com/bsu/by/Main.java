@@ -57,10 +57,11 @@ public class Main {
                 i.printCompany();
             }
         } catch (FileNotFoundException ex) {
-            LOGGER.log(Level.SEVERE, "Missing file", ex);
+            LOGGER.log(Level.SEVERE, "Missing input file", ex);
         } catch (IOException ex) {
             LOGGER.log(Level.SEVERE, "Error message", ex);
         }
+
 
         try(FileWriter writer = new FileWriter(csvOutFileName, false))
         {
@@ -72,9 +73,10 @@ public class Main {
             }
         }
         catch(IOException ex){
-
-            System.out.println(ex.getMessage());
+            LOGGER.log(Level.SEVERE, "Missing output file");
         }
-
+        for(Company i : companyList){
+            System.out.println(i.toString());
+        }
     }
 }

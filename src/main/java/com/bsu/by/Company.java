@@ -1,5 +1,8 @@
 package com.bsu.by;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Company {
     private final String name;
     private final String shortTitle;
@@ -43,6 +46,44 @@ public class Company {
         for (String i : info) {
             System.out.println(i);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Company company = (Company) o;
+        return name.equals(company.name) &&
+                shortTitle.equals(company.shortTitle) &&
+                dateUpdate.equals(company.dateUpdate) &&
+                address.equals(company.address) &&
+                dateFoundation.equals(company.dateFoundation) &&
+                countEmployees.equals(company.countEmployees) &&
+                auditor.equals(company.auditor) &&
+                phone.equals(company.phone) &&
+                email.equals(company.email) &&
+                branch.equals(company.branch) &&
+                activity.equals(company.activity) &&
+                link.equals(company.link) &&
+                Arrays.equals(info, company.info);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(name, shortTitle,
+                dateUpdate, address, dateFoundation,
+                countEmployees, auditor, phone, email,
+                branch, activity, link);
+        result = 31 * result + Arrays.hashCode(info);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                ", dateFoundation='" + dateFoundation + '\'' +
+                '}';
     }
 
     public String getName() {

@@ -40,3 +40,15 @@ FINE: Program started
 Oct 05, 2020 6:31:07 PM com.bsu.by.Main main
 FINE: Program started 
 
+Oct 10, 2020 12:29:03 AM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 10, 2020 12:48:57 AM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 10, 2020 12:49:41 AM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 10, 2020 12:49:56 AM com.bsu.by.Main main
+FINE: Program started 
+
