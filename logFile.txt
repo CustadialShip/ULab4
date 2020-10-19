@@ -52,3 +52,148 @@ FINE: Program started
 Oct 10, 2020 12:49:56 AM com.bsu.by.Main main
 FINE: Program started 
 
+Oct 11, 2020 9:02:40 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:08:36 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:12:36 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:14:23 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:15:15 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:17:00 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:17:58 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:18:40 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:18:52 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:19:07 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:19:43 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:22:26 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:22:36 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:25:54 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:28:04 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:28:16 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:28:39 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:28:54 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:29:59 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:31:03 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:31:27 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:38:39 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:39:51 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:39:58 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 11, 2020 9:40:07 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 6:36:23 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 6:36:35 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 6:50:08 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 6:56:26 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:00:42 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:01:04 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:04:12 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:13:39 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:14:35 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:27:31 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:28:10 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:28:12 PM com.bsu.by.Main main
+SEVERE: java.io.IOException: Invalid switcher
+Oct 19, 2020 8:28:55 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:28:58 PM com.bsu.by.Main main
+SEVERE: Invalid switcher
+java.io.IOException: Invalid switcher
+	at com.bsu.by.Main.main(Main.java:109)
+
+Oct 19, 2020 8:29:10 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:29:56 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:30:10 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:30:27 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:31:04 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:31:16 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:31:25 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:32:15 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 19, 2020 8:32:43 PM com.bsu.by.Main main
+FINE: Program started 
+

@@ -1,15 +1,16 @@
 package com.bsu.by;
 
-import java.util.Arrays;
-import java.util.Objects;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class Company {
     private final String name;
     private final String shortTitle;
-    private final String dateUpdate; // ?
+    private final LocalDate dateUpdate; // ?
     private final String address;
-    private final String dateFoundation;  // ?
-    private final String countEmployees;
+    private final LocalDate dateFoundation;  // ?
+    private final int countEmployees;
     private final String auditor;
     private final String phone;
     private final String email;
@@ -19,17 +20,18 @@ public class Company {
     private final String[] info;
 
 
-    Company(String[] info) throws IllegalArgumentException{
+    Company(String[] info) throws IllegalArgumentException {
         if (info.length != 12) {
             throw new IllegalArgumentException("Error: wrong data");
         }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         this.info = info;
         this.name = info[0];
         this.shortTitle = info[1];
-        this.dateUpdate = info[2];
+        this.dateUpdate = LocalDate.parse(info[2], formatter);
         this.address = info[3];
-        this.dateFoundation = info[4];
-        this.countEmployees = info[5];
+        this.dateFoundation = LocalDate.parse(info[4], formatter);
+        this.countEmployees = Integer.parseInt(info[5]);
         this.auditor = info[6];
         this.phone = info[7];
         this.email = info[8];
@@ -38,14 +40,8 @@ public class Company {
         this.link = info[11];
     }
 
-    String[] getInfo(){
+    String[] getInfo() {
         return info;
-    }
-
-    void printCompany() {
-        for (String i : info) {
-            System.out.println(i);
-        }
     }
 
     @Override
@@ -53,12 +49,12 @@ public class Company {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Company company = (Company) o;
-        return name.equals(company.name) &&
+        return countEmployees == company.countEmployees &&
+                name.equals(company.name) &&
                 shortTitle.equals(company.shortTitle) &&
                 dateUpdate.equals(company.dateUpdate) &&
                 address.equals(company.address) &&
                 dateFoundation.equals(company.dateFoundation) &&
-                countEmployees.equals(company.countEmployees) &&
                 auditor.equals(company.auditor) &&
                 phone.equals(company.phone) &&
                 email.equals(company.email) &&
@@ -70,10 +66,7 @@ public class Company {
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(name, shortTitle,
-                dateUpdate, address, dateFoundation,
-                countEmployees, auditor, phone, email,
-                branch, activity, link);
+        int result = Objects.hash(name, shortTitle, dateUpdate, address, dateFoundation, countEmployees, auditor, phone, email, branch, activity, link);
         result = 31 * result + Arrays.hashCode(info);
         return result;
     }
@@ -83,14 +76,14 @@ public class Company {
         return "Company{" +
                 "name='" + name + '\'' +
                 ", dateFoundation='" + dateFoundation + '\'' +
-                '}';
+                '}' + "    " + countEmployees;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getDateUpdate() {
+    public LocalDate getDateUpdate() {
         return dateUpdate;
     }
 
@@ -98,11 +91,11 @@ public class Company {
         return address;
     }
 
-    public String getDateFoundation() {
+    public LocalDate getDateFoundation() {
         return dateFoundation;
     }
 
-    public String getCountEmployees() {
+    public int getCountEmployees() {
         return countEmployees;
     }
 

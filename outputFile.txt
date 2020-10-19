@@ -1,0 +1,2 @@
+Company{name='dev.by', dateFoundation='1995-11-01'}    103
+Company{name='tut.by', dateFoundation='1454-06-03'}    304

@@ -1,7 +1,11 @@
 package com.bsu.by;
 
 import java.io.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -9,7 +13,6 @@ import java.util.logging.SimpleFormatter;
 
 
 public class Main {
-
     public static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
     private static final String LOG_FILE = "logFile.txt";
@@ -53,30 +56,63 @@ public class Main {
                 companyList.add(new Company(company));
             }
 
-            for (Company i : companyList) {
-                i.printCompany();
-            }
         } catch (FileNotFoundException ex) {
             LOGGER.log(Level.SEVERE, "Missing input file", ex);
         } catch (IOException ex) {
             LOGGER.log(Level.SEVERE, "Error message", ex);
         }
-
-
-        try(FileWriter writer = new FileWriter(csvOutFileName, false))
-        {
-            for(Company i: companyList) {
-                for(String j : i.getInfo()){
-                    writer.write(j + cvsSplitBy);
+        System.out.println("Search by?");
+        System.out.println("1 - byShortTitle");
+        System.out.println("2 - byBranch");
+        System.out.println("3 - byActivity");
+        System.out.println("4 - byDateFoundation");
+        System.out.println("5 - byCountEmployees");
+        Query q = new Query();
+        List<Company> ans = new ArrayList<>();
+        try(Scanner sc = new Scanner(System.in)){
+            switch (sc.nextInt()) {
+                case 1 -> {
+                    System.out.println("Insert shortTitle");
+                    String sShortTitle = sc.next();
+                    ans = q.findByShortTitle(companyList, sShortTitle);
                 }
-                writer.write("\n");
+                case 2 -> {
+                    System.out.println("Insert branch");
+                    String sBranch = sc.next();
+                    ans = q.findByBranch(companyList, sBranch);
+                }
+                case 3 -> {
+                    System.out.println("Insert activity");
+                    String sActivity = sc.next();
+                    ans = q.findByActivity(companyList, sActivity);
+                }
+                case 4 -> {
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+                    System.out.println("Insert date from (DD.MM.YYYY)");
+                    LocalDate sDateInf = LocalDate.parse(sc.next(), formatter);
+                    System.out.println("Insert date by (DD.MM.YYYY)");
+                    LocalDate sDateSup = LocalDate.parse(sc.next(), formatter);
+                    ans = q.findByDateFoundation(companyList, sDateInf, sDateSup);
+                }
+                case 5 -> {
+                    System.out.println("Insert countEmployees from");
+                    int sCountEmployeesInf = sc.nextInt();
+                    System.out.println("Insert countEmployees by");
+                    int sCountEmployeesSup = sc.nextInt();
+                    ans = q.findByCountEmployees(companyList, sCountEmployeesInf, sCountEmployeesSup);
+                }
+                default -> throw new IOException("Invalid switcher");
             }
+        } catch (IOException ex){
+            LOGGER.log(Level.SEVERE, "Invalid switcher", ex);
         }
-        catch(IOException ex){
+
+        try (FileWriter writer = new FileWriter(csvOutFileName, false)) {
+            for (Company i : ans) {
+                writer.write(i.toString() + "\n");
+            }
+        } catch (IOException ex) {
             LOGGER.log(Level.SEVERE, "Missing output file");
-        }
-        for(Company i : companyList){
-            System.out.println(i.toString());
         }
     }
 }
