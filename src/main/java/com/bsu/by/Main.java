@@ -11,25 +11,27 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-
 public class Main {
     public static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
     private static final String LOG_FILE = "logFile.txt";
 
     public static void main(String[] args) {
+
         LOGGER.setLevel(Level.FINE);
         FileHandler filehandler;
-
         String csvInFileName;
         String csvOutFileName;
-        if (args.length == 2) {
+        String requestsFileName;
+        if (args.length == 3) {
             csvInFileName = args[0];
             csvOutFileName = args[1];
+            requestsFileName = args[2];
         } else {
             System.out.println("default filenames");
             csvInFileName = "inputFile.txt";
             csvOutFileName = "outputFile.txt";
+            requestsFileName = "requests.txt";
         }
 
         String line;
@@ -55,12 +57,23 @@ public class Main {
                 }
                 companyList.add(new Company(company));
             }
-
         } catch (FileNotFoundException ex) {
             LOGGER.log(Level.SEVERE, "Missing input file", ex);
         } catch (IOException ex) {
             LOGGER.log(Level.SEVERE, "Error message", ex);
         }
+
+        List<Company> ans2;
+        SQLProc sqlp = new SQLProc(requestsFileName);
+        ans2 = sqlp.read(companyList);
+        try (FileWriter writer = new FileWriter(csvOutFileName, false)) {
+            for (Company i : ans2) {
+                writer.write(i.toString() + "\n");
+            }
+        } catch (IOException ex) {
+            LOGGER.log(Level.SEVERE, "Missing output file");
+        }
+
         System.out.println("Search by?");
         System.out.println("1 - byShortTitle");
         System.out.println("2 - byBranch");
@@ -69,7 +82,7 @@ public class Main {
         System.out.println("5 - byCountEmployees");
         Query q = new Query();
         List<Company> ans = new ArrayList<>();
-        try(Scanner sc = new Scanner(System.in)){
+        try (Scanner sc = new Scanner(System.in)) {
             switch (sc.nextInt()) {
                 case 1 -> {
                     System.out.println("Insert shortTitle");
@@ -103,7 +116,7 @@ public class Main {
                 }
                 default -> throw new IOException("Invalid switcher");
             }
-        } catch (IOException ex){
+        } catch (IOException ex) {
             LOGGER.log(Level.SEVERE, "Invalid switcher", ex);
         }
 

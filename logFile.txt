@@ -197,3 +197,21 @@ FINE: Program started
 Oct 19, 2020 8:32:43 PM com.bsu.by.Main main
 FINE: Program started 
 
+Oct 23, 2020 2:11:50 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 23, 2020 3:09:58 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 30, 2020 12:01:05 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 30, 2020 12:01:40 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 30, 2020 12:02:25 PM com.bsu.by.Main main
+FINE: Program started 
+
+Oct 30, 2020 12:09:50 PM com.bsu.by.Main main
+FINE: Program started 
+

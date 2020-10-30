@@ -8,7 +8,6 @@ public class Query {
     //enum userQuery{byShortTitle, byBranch, byActivity, byDateFoundation, byCountEmployees}
 
     protected List<Company> findByShortTitle(List<Company> companyList, String shortTitle) {
-        shortTitle = shortTitle.toLowerCase();
         List<Company> answer = new ArrayList<>();
         for (Company i : companyList) {
             if (i.getShortTitle().equalsIgnoreCase(shortTitle)) {
@@ -19,7 +18,6 @@ public class Query {
     }
 
     protected List<Company> findByBranch(List<Company> companyList, String branch) {
-        branch = branch.toLowerCase();
         List<Company> answer = new ArrayList<>();
         for (Company i : companyList) {
             if (i.getBranch().equalsIgnoreCase(branch)) {
@@ -30,7 +28,6 @@ public class Query {
     }
 
     protected List<Company> findByActivity(List<Company> companyList, String activity) {
-        activity = activity.toLowerCase();
         List<Company> answer = new ArrayList<>();
         for (Company i : companyList) {
             if (i.getActivity().equalsIgnoreCase(activity)) {
