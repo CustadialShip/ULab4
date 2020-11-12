@@ -1,0 +1,1 @@
+Company{name='mail.ru', dateFoundation='1564-09-06'}    1000

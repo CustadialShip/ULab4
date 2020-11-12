@@ -1,0 +1,3 @@
+select from company_table where shortTitle = dev
+select from company_table where employeeCount between 300 and 1100
+select from activity where activity = smt3
