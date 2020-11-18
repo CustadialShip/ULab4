@@ -1,0 +1,3 @@
+dev.by;dev;10.12.2001;Minsk;01.11.1995;103;;1234566;debv@gmail.com;dev;smt1;dev.by
+tut.by;tut;04.04.1965;Gomel;03.06.1454;304;;4321342;tutby@tut.by;tut;smt2;tut.by
+mail.ru;mail;13.12.1077;Moscow;06.09.1564;1000;;1954632;mailru@mail.ru;mail;smt3;mail.ru
